@@ -1,5 +1,5 @@
 from tkinter import *
-from tela_do_cadastro import codigo
+import codigo
 import mysql.connector
 cnx = mysql.connector.connect(user="root", password="", host="127.0.0.1")
 mcursor = cnx.cursor()
@@ -21,8 +21,16 @@ def cadastrar():
             erro = Label(janela, text="Login ou Email de usuário ja em uso!")
             erro.place(x=150, y=330)
         else:
-            erro = Label(janela, text="Cadastrado com sucesso!")
-            erro.place(x=150, y=330)
+            confirm = Tk()
+            confirm.title("Email de Verificação!")
+            confirm.geometry("600x600")
+            txt = Label(confirm, text="Um Email foi enviado por favor digite o código aqui!")
+            txt.place(x=150, y=150)
+            conf = Entry(confirm)
+            conf.place(x=220, y=200)
+            bot = Button(confirm, width=16, text="Ok")
+            bot.place(x=220, y=250)
+            confirm.mainloop()
 
 
 def entrar():
