@@ -5,5 +5,4 @@ def verificacao(email):
     codigo = list()
     for i in range(0, 6):
         codigo.append(randint(0, 9))
-
     enviar.enviarconfirm(codigo, email)

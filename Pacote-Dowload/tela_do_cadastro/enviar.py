@@ -38,7 +38,9 @@ def enviarconfirm(remetente, codigo):
     email.HTMLBody = f"""
         <h1>Código de Verificação!</h1>
         <hr>
-        <h2></h2>
+        <h2>{codigo}</h2>
+        <p><strong>Coloque este código no app!</strong></p>
+        <hr>
         <ins>Sempre Estaremos Disponíveis!</ins>
         """
     try:
@@ -48,3 +50,6 @@ def enviarconfirm(remetente, codigo):
         print("Aconteceu algo de errado")
     else:
         print("   ---   email enviado")
+
+
+enviarconfirm("athos.favaron@gmail.com", "878151")
