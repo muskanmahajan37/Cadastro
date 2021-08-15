@@ -8,6 +8,11 @@ a = 0
 
 
 def cadastrar():
+
+    def fim():
+        cdg = conf.get()
+        verificação_de_conta.validador(email, cdg)
+
     email = eme.get()
     nome = nom.get()
     senha = sen.get()
@@ -21,16 +26,15 @@ def cadastrar():
             erro = Label(janela, text="Login ou Email de usuário ja em uso!")
             erro.place(x=150, y=330)
         else:
-            confirm = Tk()
-            confirm.title("Email de Verificação!")
-            confirm.geometry("600x600")
-            txt = Label(confirm, text="Um Email foi enviado por favor digite o código aqui!")
-            txt.place(x=150, y=150)
-            conf = Entry(confirm)
-            conf.place(x=220, y=200)
-            bot = Button(confirm, width=16, text="Ok")
-            bot.place(x=220, y=250)
-            confirm.mainloop()
+            janela.title("Email de Verificação!")
+            janela.geometry("800x800")
+            txt = Label(janela, text="Um Email foi enviado por favor digite o código aqui!")
+            txt.place(x=150, y=330)
+            conf = Entry(janela)
+            conf.place(x=150, y=400)
+            bot = Button(janela, width=16, text="Ok", command=fim)
+            bot.place(x=150, y=450)
+
 
 
 def entrar():

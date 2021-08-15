@@ -11,12 +11,14 @@ def verificacao(email, nome, senha):
     codigo = codigo.replace("[", "")
     codigo = codigo.replace("]", "")
     codigo = codigo.replace(",", "")
+    codigo = codigo.replace(" ", "")
     mcursor.execute("use login;")
     mcursor.execute(f"insert into conf value (default, '{email}', '{nome}', '{senha}', '{codigo}');")
     enviar.enviarconfirm(email, codigo)
 
 
 def validador(email, codigo):
+    codigo = str(codigo).strip().replace(" ", "")
     import mysql.connector
     cnx = mysql.connector.connect(user="root", password="", host="127.0.0.1")
     mcursor = cnx.cursor()
@@ -33,4 +35,3 @@ def validador(email, codigo):
             print("CONTA ADICIONADA!")
         else:
             print("Código inválido!")
-

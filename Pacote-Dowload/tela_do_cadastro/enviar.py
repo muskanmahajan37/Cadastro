@@ -34,7 +34,7 @@ def enviarconfirm(remetente, codigo):
     outlook = win32.Dispatch("outlook.application")
     email = outlook.CreateItem(0)
     email.To = f"{remetente}"
-    email.Subject = "Senha"
+    email.Subject = "Verificação"
     email.HTMLBody = f"""
         <h1>Código de Verificação!</h1>
         <hr>
