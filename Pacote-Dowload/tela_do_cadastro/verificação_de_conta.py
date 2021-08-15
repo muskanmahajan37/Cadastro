@@ -15,6 +15,3 @@ def verificacao(email, nome, senha):
     mcursor.execute("use login;")
     mcursor.execute(f"insert into conf value (default, '{email}', '{nome}', '{senha}', '{codigo}');")
     enviar.enviarconfirm(email, codigo)
-
-
-verificacao(email="athos.favaron@gmail.com", nome="Athos", senha="28Maio07")
