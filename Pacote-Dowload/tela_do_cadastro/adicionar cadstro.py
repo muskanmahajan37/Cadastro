@@ -1,5 +1,6 @@
 from tkinter import *
 import codigo
+import verificação_de_conta
 import mysql.connector
 cnx = mysql.connector.connect(user="root", password="", host="127.0.0.1")
 mcursor = cnx.cursor()
@@ -15,8 +16,7 @@ def cadastrar():
         erro.place(x=150, y=330)
     else:
         try:
-            mcursor.execute("use login;")
-            mcursor.execute(f"insert into logi value (default, '{email}', '{nome}', '{senha}');")
+            verificação_de_conta.verificacao(email, nome, senha)
         except:
             erro = Label(janela, text="Login ou Email de usuário ja em uso!")
             erro.place(x=150, y=330)
