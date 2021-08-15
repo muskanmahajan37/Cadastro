@@ -36,7 +36,6 @@ def cadastrar():
             bot.place(x=150, y=450)
 
 
-
 def entrar():
     mcursor.execute("use login;")
     mcursor.execute("select email, nome, senha from logi;")
@@ -97,7 +96,6 @@ def esqueceuasenha():
             text = Label(erro, text="Email Não cadastrado!!!                  ")
             text.place(x=30, y=60)
             erro.mainloop()
-
     enviar = Tk()
     enviar.title("Senha")
     enviar.geometry("960x540")
