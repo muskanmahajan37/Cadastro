@@ -29,7 +29,7 @@ def cadastrar():
             janela.title("Email de Verificação!")
             janela.geometry("800x800")
             txt = Label(janela, text="Um Email foi enviado por favor digite o código aqui!")
-            txt.place(x=150, y=330)
+            txt.place(x=150, y=350)
             conf = Entry(janela)
             conf.place(x=150, y=400)
             bot = Button(janela, width=16, text="Ok", command=fim)
