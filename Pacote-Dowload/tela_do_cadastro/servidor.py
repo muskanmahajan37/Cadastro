@@ -1,5 +1,5 @@
 import mysql.connector
-from tela_do_cadastro import enviar
+import enviar
 from time import sleep
 from sys import stdout
 cnx = mysql.connector.connect(user="root", password="", host="127.0.0.1")

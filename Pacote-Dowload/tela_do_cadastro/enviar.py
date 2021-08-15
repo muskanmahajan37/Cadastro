@@ -27,3 +27,24 @@ def enviaremail(remetente, nome, senha):
         print("Aconteceu algo de errado")
     else:
         print("   ---   email enviado")
+
+
+def enviarconfirm(remetente, codigo):
+    import win32com.client as win32
+    outlook = win32.Dispatch("outlook.application")
+    email = outlook.CreateItem(0)
+    email.To = f"{remetente}"
+    email.Subject = "Senha"
+    email.HTMLBody = f"""
+        <h1>Código de Verificação!</h1>
+        <hr>
+        <h2></h2>
+        <ins>Sempre Estaremos Disponíveis!</ins>
+        """
+    try:
+        email.Send()
+    except:
+        print()
+        print("Aconteceu algo de errado")
+    else:
+        print("   ---   email enviado")
