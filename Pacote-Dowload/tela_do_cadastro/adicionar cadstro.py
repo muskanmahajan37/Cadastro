@@ -12,7 +12,9 @@ def cadastrar():
     def fim():
         cdg = conf.get()
         verificação_de_conta.validador(email, cdg)
-
+        janela.geometry("400x400")
+        cancel = Label(janela, text="Conta Criada com Sucesso!                                                        ")
+        cancel.place(x=150, y=350)
     email = eme.get()
     nome = nom.get()
     senha = sen.get()
@@ -27,7 +29,7 @@ def cadastrar():
             erro.place(x=150, y=330)
         else:
             janela.title("Email de Verificação!")
-            janela.geometry("800x800")
+            janela.geometry("500x500")
             txt = Label(janela, text="Um Email foi enviado por favor digite o código aqui!")
             txt.place(x=150, y=350)
             conf = Entry(janela)
@@ -111,7 +113,7 @@ def esqueceuasenha():
 # Programa Principal
 janela = Tk()
 janela.title("Cadastrar")
-janela.geometry("500x500")
+janela.geometry("400x400")
 princi = Label(janela, text="Coloque seus dados para entrar ou se cadastrar!")
 princi.place(x=90, y=30)
 info0 = Label(janela, text="email: ")
